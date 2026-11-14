@@ -1,0 +1,68 @@
+* { box-sizing: border-box; }
+:root { font-family: Arial, sans-serif; color: #24332d; background: #f3f6f2; }
+body { margin: 0; }
+header { padding: 34px 20px 24px; text-align: center; color: white; background: #315c48; }
+header h1 { margin: 0 0 8px; font-size: 2rem; }
+header p { margin: 0; color: #e1eee5; }
+.page-tabs { display: flex; justify-content: center; gap: 8px; padding: 14px 16px; background: #e8efe7; }
+.page-tab { padding: 10px 18px; border: 1px solid #b8cdbd; border-radius: 9px; color: #315c48; background: white; font: inherit; cursor: pointer; }
+.page-tab.active { color: white; border-color: #315c48; background: #315c48; }
+.page-view[hidden] { display: none; }
+main { width: min(1000px, calc(100% - 32px)); margin: 28px auto; }
+section section { margin-bottom: 24px; padding: 24px; border: 1px solid #e0e8df; border-radius: 16px; background: white; box-shadow: 0 4px 14px #24332d0b; }
+h2 { margin-top: 0; color: #315c48; }
+.plan-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.plan-button { min-height: 50px; padding: 11px; border: 1px solid #b8cdbd; border-radius: 10px; color: #315c48; background: #f4f8f3; font: inherit; font-weight: bold; cursor: pointer; }
+.plan-button:hover, .add-plan-button:hover, .page-tab:hover { background: #e5f0e6; }
+.plan-button.selected { color: white; border-color: #315c48; background: #315c48; }
+.add-plan-button, .form-actions button { margin-top: 14px; padding: 10px 14px; border: 1px solid #b8cdbd; border-radius: 8px; color: #315c48; background: #f4f8f3; font: inherit; cursor: pointer; }
+.add-plan-form { display: grid; gap: 12px; margin-top: 16px; padding: 16px; border: 1px solid #e0e8df; border-radius: 10px; background: #f7f8f5; }
+.add-plan-form[hidden] { display: none; }
+.add-plan-form label, .date-field, .notes-field { display: grid; gap: 6px; color: #59665f; }
+.add-plan-form input, .add-plan-form textarea, .date-field input, .notes-field textarea, .exercise-entry input, .exercise-entry select { width: 100%; min-height: 38px; padding: 8px; border: 1px solid #b8cdbd; border-radius: 6px; font: inherit; }
+.form-actions { display: flex; gap: 8px; }
+.form-actions button { margin-top: 0; }
+.plan-details { margin-top: 22px; padding: 18px; border-radius: 10px; background: #f7f8f5; }
+.plan-details h3 { margin-top: 0; }
+.exercise-list { display: grid; gap: 12px; padding: 0; list-style: none; }
+.exercise-entry { display: grid; grid-template-columns: minmax(130px, 1fr) 100px 140px 160px; align-items: center; gap: 12px; padding: 14px; border: 1px solid #e0e8df; border-radius: 10px; background: white; }
+.exercise-entry label { display: grid; gap: 5px; color: #59665f; font-size: 0.9rem; }
+.date-field { max-width: 240px; margin-bottom: 16px; }
+.notes-field { margin: 16px 0; }
+.notes-field textarea { resize: vertical; }
+.save-workout-button { padding: 12px 18px; border: 0; border-radius: 8px; color: white; background: #315c48; font: inherit; font-weight: bold; cursor: pointer; }
+.plan-management, .workout-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.plan-management button, .workout-actions button { padding: 8px 12px; border: 1px solid #b8cdbd; border-radius: 8px; color: #315c48; background: #f4f8f3; font: inherit; cursor: pointer; }
+.plan-management .delete-plan-button, .workout-actions .delete-workout-button { color: #9b3434; border-color: #dfbaba; background: #fff6f6; }
+.calendar-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.calendar-toolbar h3 { margin: 0; text-align: center; text-transform: capitalize; }
+.calendar-toolbar button { padding: 8px 12px; border: 1px solid #b8cdbd; border-radius: 8px; color: #315c48; background: #f4f8f3; font: inherit; cursor: pointer; }
+.calendar-weekdays, .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.calendar-weekdays { margin-bottom: 6px; text-align: center; font-weight: bold; }
+.calendar-day { min-height: 78px; padding: 6px; border: 1px solid #e0e8df; border-radius: 8px; background: white; }
+.calendar-empty { border-color: transparent; background: transparent; }
+.calendar-day-number { display: block; margin-bottom: 4px; font-weight: bold; }
+.calendar-event { display: block; overflow: hidden; margin-top: 3px; padding: 3px 5px; border-radius: 5px; color: white; background: var(--event-color); font-size: 0.72rem; text-overflow: ellipsis; }
+.workout-card { margin-top: 14px; padding: 14px; border: 1px solid #e0e8df; border-radius: 10px; background: #f7f8f5; }
+.workout-card h3 { color: #315c48; }
+.workout-color { display: inline-block; width: 14px; height: 14px; margin-right: 6px; border-radius: 50%; }
+.workout-notes { white-space: pre-wrap; }
+.progress-layout { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: start; margin-top: 20px; }
+.progress-exercise-list { display: grid; gap: 8px; }
+.progress-exercise-button { padding: 10px 12px; border: 1px solid #b8cdbd; border-radius: 8px; color: #315c48; background: #f4f8f3; font: inherit; text-align: left; cursor: pointer; }
+.progress-exercise-button.selected { color: white; border-color: #315c48; background: #315c48; }
+.progress-chart { min-width: 0; padding: 12px; border: 1px solid #e0e8df; border-radius: 10px; background: white; }
+.progress-chart svg { display: block; width: 100%; height: auto; }
+.progress-summary { margin: 4px 0 12px; color: #315c48; font-weight: bold; }
+@media (max-width: 650px) {
+  header h1 { font-size: 1.6rem; }
+  main { width: calc(100% - 20px); margin: 18px auto; }
+  section section { padding: 18px; }
+  .plan-list { grid-template-columns: repeat(2, 1fr); }
+  .exercise-entry { grid-template-columns: 1fr 1fr; }
+  .exercise-entry strong { grid-column: 1 / -1; }
+  .progress-layout { grid-template-columns: 1fr; }
+  .calendar-day { min-height: 62px; padding: 3px; }
+  .calendar-event { padding: 2px; font-size: 0.62rem; }
+  .calendar-toolbar button { padding: 7px; font-size: 0.8rem; }
+}

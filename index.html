@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minu treeningpäevik</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Minu treeningpäevik</h1>
+    <p>Minu treeningud, minu moodi.</p>
+  </header>
+
+  <nav class="page-tabs" aria-label="Põhivaated">
+    <button type="button" class="page-tab active" data-view="training-view">Treening</button>
+    <button type="button" class="page-tab" data-view="calendar-view">Kalender</button>
+    <button type="button" class="page-tab" data-view="progress-view">Areng</button>
+  </nav>
+
+  <main>
+    <section id="training-view" class="page-view">
+      <section aria-labelledby="plans-heading">
+        <h2 id="plans-heading">Vali treeningkava</h2>
+        <div class="plan-list">
+          <button type="button" class="plan-button">Seistes</button>
+          <button type="button" class="plan-button">Istudes</button>
+          <button type="button" class="plan-button">Põrandal</button>
+          <button type="button" class="plan-button">Kardio</button>
+        </div>
+        <button type="button" id="show-add-plan" class="add-plan-button">+ Loo uus kava</button>
+        <form id="add-plan-form" class="add-plan-form" hidden>
+          <label>Kava nimi<input id="new-plan-name" type="text" required></label>
+          <label>Harjutused (eralda komadega)
+            <textarea id="new-plan-exercises" rows="3" placeholder="Näiteks: Sõudmine, Kükid, Velo" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit">Salvesta kava</button>
+            <button type="button" id="cancel-add-plan">Loobu</button>
+          </div>
+        </form>
+        <div class="plan-details">
+          <h3>Treeningkava harjutused</h3>
+          <div class="exercise-area"><p>Vali ülevalt kava, et näha selle harjutusi.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="calendar-view" class="page-view" hidden>
+      <section aria-labelledby="calendar-heading">
+        <h2 id="calendar-heading">Treeningkalender</h2>
+        <div class="calendar-toolbar">
+          <button type="button" id="previous-month">Eelmine kuu</button>
+          <h3 id="calendar-month"></h3>
+          <button type="button" id="next-month">Järgmine kuu</button>
+        </div>
+        <div class="calendar-weekdays" aria-hidden="true">
+          <span>E</span><span>T</span><span>K</span><span>N</span><span>R</span><span>L</span><span>P</span>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+      </section>
+      <section aria-labelledby="history-heading">
+        <h2 id="history-heading">Minu treeningud</h2>
+        <div id="workout-history"><p>Salvestatud treeningud ilmuvad siia.</p></div>
+      </section>
+    </section>
+
+    <section id="progress-view" class="page-view" hidden>
+      <section aria-labelledby="progress-heading">
+        <h2 id="progress-heading">Raskuse areng</h2>
+        <p>Vali harjutus, et näha selle raskusastme trendi aja jooksul.</p>
+        <div class="progress-layout">
+          <div id="progress-exercise-list" class="progress-exercise-list">
+            <p>Graafiku jaoks salvesta kõigepealt mõni treening.</p>
+          </div>
+          <div id="progress-chart" class="progress-chart"><p>Vali vasakult harjutus.</p></div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
