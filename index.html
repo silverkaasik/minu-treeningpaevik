@@ -17,6 +17,7 @@
     <button type="button" class="page-tab active" data-view="training-view">Treening</button>
     <button type="button" class="page-tab" data-view="calendar-view">Kalender</button>
     <button type="button" class="page-tab" data-view="progress-view">Areng</button>
+    <button type="button" class="page-tab" data-view="exercises-view">Harjutused</button>
   </nav>
 
   <main>
@@ -32,9 +33,7 @@
         <button type="button" id="show-add-plan" class="add-plan-button">+ Loo uus kava</button>
         <form id="add-plan-form" class="add-plan-form" hidden>
           <label>Kava nimi<input id="new-plan-name" type="text" required></label>
-          <label>Harjutused (eralda komadega)
-            <textarea id="new-plan-exercises" rows="3" placeholder="Näiteks: Sõudmine, Kükid, Velo" required></textarea>
-          </label>
+          <fieldset class="exercise-picker"><legend>Vali kavasse harjutused</legend><div id="new-plan-exercise-picker"></div></fieldset>
           <div class="form-actions">
             <button type="submit">Salvesta kava</button>
             <button type="button" id="cancel-add-plan">Loobu</button>
@@ -64,12 +63,25 @@
         <h2 id="history-heading">Minu treeningud</h2>
         <div id="workout-history"><p>Salvestatud treeningud ilmuvad siia.</p></div>
       </section>
+      <section aria-labelledby="backup-heading">
+        <h2 id="backup-heading">Andmete varukoopia</h2>
+        <p>Laadi treeningud ja kavad varukoopiafaili või taasta need varasemast failist.</p>
+        <div class="backup-actions">
+          <button type="button" id="export-backup" class="backup-button">Laadi varukoopia alla</button>
+          <button type="button" id="import-backup" class="backup-button">Taasta varukoopiast</button>
+          <input type="file" id="backup-file" accept="application/json,.json" hidden>
+        </div>
+      </section>
     </section>
 
     <section id="progress-view" class="page-view" hidden>
       <section aria-labelledby="progress-heading">
         <h2 id="progress-heading">Raskuse areng</h2>
         <p>Vali harjutus, et näha selle raskusastme trendi aja jooksul.</p>
+        <div class="progress-export">
+          <p>Laadi salvestatud treeningandmed ja värviline kalendrivaade alla Exceli failina. Andmeid saad Google Sheetsis enda graafikute tegemiseks kasutada.</p>
+          <button type="button" id="export-xlsx" class="backup-button">Laadi raw data alla (.xlsx)</button>
+        </div>
         <div class="progress-layout">
           <div id="progress-exercise-list" class="progress-exercise-list">
             <p>Graafiku jaoks salvesta kõigepealt mõni treening.</p>
@@ -78,6 +90,23 @@
         </div>
       </section>
     </section>
+
+    <section id="exercises-view" class="page-view" hidden>
+      <section aria-labelledby="exercise-library-heading">
+        <h2 id="exercise-library-heading">Harjutuste kogu</h2>
+        <p>Siin on olemasolevad ja sinu lisatud harjutused. Lisa uus harjutus ning vali see hiljem sobivasse kavasse.</p>
+        <form id="add-library-exercise-form" class="library-add-form">
+          <label for="new-library-exercise">Lisa uus harjutus</label>
+          <div><input id="new-library-exercise" type="text" placeholder="Näiteks: Kätekõverdused" required>
+            <button type="submit">Lisa harjutus</button></div>
+        </form>
+        <label class="library-plan-picker">Vali kava, kuhu harjutust lisada
+          <select id="library-target-plan"></select>
+        </label>
+        <ul id="exercise-library-list" class="exercise-library-list"></ul>
+      </section>
+    </section>
   </main>
 </body>
 </html>
+

@@ -13,14 +13,17 @@ Rakenduse ainus sihtkasutaja olen mina ise. Teen selle enda treeningute ja eelis
 ## Funktsionaalsus
 
 - Valida nelja algse kava vahel: Seistes, Istudes, Põrandal ja Kardio.
+- Vaadata eraldi Harjutuste vaates harjutusi, lisada kogusse uusi harjutusi, lisada neid valitud kavasse ja eemaldada harjutusi kogust ning kavadest.
 - Luua lisakavasid ning muuta või kustutada enda loodud kavasid.
-- Lisada ja eemaldada harjutusi igas kavas.
+- Luua uus kava ja täiendada olemasolevat kava valides harjutusi olemasolevate harjutuste kogust; kavas saab harjutusi eemaldada.
 - Märkida harjutuse seeriate arv, kordused seerias ja raskusaste skaalal 1–5. Kardioharjutuse puhul saab märkida minutid ja raskusastme.
 - Lisada treeningule kuupäeva ja märkmeid.
 - Vaadata treeninguid värvikoodiga kalendris ning treeningute ajaloos.
 - Muuta ja kustutada salvestatud treeninguid.
+- Laadida treeningud ja kavad JSON-varukoopiana alla ning taastada need varukoopiafailist.
 - Avada eraldi Arengu vaade, valida harjutuste loendist harjutus ja vaadata selle raskusastme lihtsat graafikut.
-- Hoida sama nimega harjutusi eri kavades eraldi, näiteks „Seistes – Sõudmine“ ja „Istudes – Sõudmine“.
+- Laadida treeningute algandmed ja kava värvidega aastakalender alla `.xlsx`-failina Google Sheetsis edasiseks analüüsiks ja graafikute loomiseks.
+- Eristada sarnaseid harjutusi nime märkega, näiteks „Sõudmine – seistes“ ja „Sõudmine – istudes“; Arengu vaade kasutab harjutuse nime.
 
 ## Tehnoloogiad
 
@@ -38,7 +41,8 @@ Rakenduse ainus sihtkasutaja olen mina ise. Teen selle enda treeningute ja eelis
 4. Lisada treeningu salvestamine koos seeriate, korduste, minutite, raskusastme ja märkmetega.
 5. Salvestada andmed localStorage'is ning kuvada neid ajaloos ja värvikoodiga kalendris.
 6. Koostada harjutuse ja kava järgi eraldi raskusastme trendigraafik.
-7. Viimistleda rakenduse kasutusmugavus ja kasutusjuhend.
+7. Lisada varukoopia salvestamine ja taastamine.
+8. Viimistleda rakenduse kasutusmugavus ja kasutusjuhend.
 
 ## Valmisoleku kriteeriumid
 
@@ -56,3 +60,5 @@ Projekt on valmis, kui:
 ## Käivitamine
 
 Ava `index.html` veebilehitsejas. Treeninguandmed salvestatakse samas veebilehitsejas localStorage'i.
+
+

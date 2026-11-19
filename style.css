@@ -54,6 +54,8 @@ h2 { margin-top: 0; color: #315c48; }
 .progress-chart { min-width: 0; padding: 12px; border: 1px solid #e0e8df; border-radius: 10px; background: white; }
 .progress-chart svg { display: block; width: 100%; height: auto; }
 .progress-summary { margin: 4px 0 12px; color: #315c48; font-weight: bold; }
+.progress-export { margin: 18px 0; padding: 14px; border: 1px solid #d6e3d8; border-radius: 10px; background: #f7f8f5; }
+.progress-export p { margin: 0 0 10px; }
 @media (max-width: 650px) {
   header h1 { font-size: 1.6rem; }
   main { width: calc(100% - 20px); margin: 18px auto; }
@@ -66,3 +68,44 @@ h2 { margin-top: 0; color: #315c48; }
   .calendar-event { padding: 2px; font-size: 0.62rem; }
   .calendar-toolbar button { padding: 7px; font-size: 0.8rem; }
 }
+
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.backup-button {
+  padding: 10px 14px;
+  border: 1px solid #b8cdbd;
+  border-radius: 8px;
+  color: #315c48;
+  background: #f4f8f3;
+  font: inherit;
+  cursor: pointer;
+}
+
+.backup-button:hover {
+  background: #e5f0e6;
+}
+
+.exercise-picker { margin: 4px 0; padding: 14px; border: 1px solid #d6e3d8; border-radius: 10px; }
+.exercise-picker legend { padding: 0 6px; color: #315c48; font-weight: bold; }
+.exercise-choice { display: flex; align-items: center; gap: 8px; padding: 7px 4px; color: #35443c; }
+.exercise-choice input { width: 18px; height: 18px; accent-color: #315c48; }
+.exercise-library-list { columns: 2; padding-left: 22px; line-height: 1.9; }
+.exercise-library-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; break-inside: avoid; padding: 5px 8px; }
+.exercise-library-list button { flex: 0 0 auto; padding: 6px 9px; border: 1px solid #b8cdbd; border-radius: 7px; color: #315c48; background: #f4f8f3; font: inherit; cursor: pointer; }
+.exercise-library-list .remove-library-exercise { width: 28px; height: 28px; padding: 0; border-color: #dfbaba; border-radius: 50%; color: #9b3434; background: #fff6f6; font-size: 1.2rem; line-height: 1; }
+.library-plan-picker { display: grid; gap: 6px; max-width: 360px; margin: 16px 0; color: #59665f; }
+.library-plan-picker select { min-height: 40px; padding: 8px; border: 1px solid #b8cdbd; border-radius: 7px; background: white; font: inherit; }
+.library-add-form { display: grid; gap: 7px; max-width: 460px; margin: 18px 0; color: #59665f; }
+.library-add-form div { display: flex; gap: 8px; }
+.library-add-form input { flex: 1; min-width: 0; min-height: 40px; padding: 8px 10px; border: 1px solid #b8cdbd; border-radius: 7px; font: inherit; }
+.library-add-form button { padding: 8px 12px; border: 1px solid #315c48; border-radius: 7px; color: white; background: #315c48; font: inherit; cursor: pointer; }
+.plan-exercise-editor { margin-top: 18px; padding: 16px; border: 1px solid #d6e3d8; border-radius: 10px; background: white; }
+.plan-exercise-editor h4 { margin: 0 0 10px; color: #315c48; }
+.selected-plan-exercises { display: grid; gap: 8px; padding: 0; list-style: none; }
+.selected-plan-exercises li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 11px; border: 1px solid #e0e8df; border-radius: 8px; }
+.selected-plan-exercises button { padding: 6px 10px; border: 1px solid #dfbaba; border-radius: 7px; color: #9b3434; background: #fff6f6; font: inherit; cursor: pointer; }
+@media (max-width: 650px) { .exercise-library-list { columns: 1; } }
